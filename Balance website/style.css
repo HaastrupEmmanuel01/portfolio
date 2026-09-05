@@ -1,0 +1,307 @@
+/* ---------- Theme tokens (shared system with portfolio) ---------- */
+:root {
+  --bg: #FAFAF7;
+  --text: #1B1B1F;
+  --text-muted: #5B5B63;
+  --border: #E4E2DB;
+  --accent-orange: #FF5A36;
+  --accent-teal: #12805C;
+  --surface: #F1F0EA;
+}
+
+html[data-theme="dark"] {
+  --bg: #14151A;
+  --text: #EDEDE8;
+  --text-muted: #A0A0A8;
+  --border: #2A2B32;
+  --accent-orange: #FF7A5C;
+  --accent-teal: #2EC28E;
+  --surface: #1D1E24;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, .logo, .eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5vw;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-teal);
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: 640px;
+  padding: 4rem 5vw 2rem;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: var(--accent-teal);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.hero-desc {
+  color: var(--text-muted);
+}
+
+/* ---------- Tip banner ---------- */
+.tip-banner {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 1.25rem 5vw;
+  background: var(--surface);
+  border-left: 3px solid var(--accent-teal);
+  border-radius: 0 8px 8px 0;
+}
+
+.tip-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-teal);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+#tip-text {
+  margin: 0;
+  color: var(--text);
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  padding: 0 5vw;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.panel h2 {
+  font-size: 1.1rem;
+  margin: 0 0 1.25rem;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  height: 160px;
+}
+
+.bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.bar {
+  width: 100%;
+  max-width: 32px;
+  background: var(--accent-teal);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+}
+
+.bar-col span {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.chart-caption {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.breakdown-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.breakdown-row-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.breakdown-track {
+  height: 8px;
+  background: var(--surface);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.breakdown-fill {
+  height: 100%;
+  background: var(--accent-orange);
+  border-radius: 4px;
+}
+
+/* ---------- Check-in form ---------- */
+.checkin {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  padding: 0 5vw;
+}
+
+.checkin h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.35rem;
+}
+
+.checkin-sub {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+#checkin-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.field select,
+.field input {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+
+#checkin-form .btn-primary {
+  grid-column: 1 / -1;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent-teal);
+  color: #FAFAF7;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  justify-self: start;
+}
+
+.checkin-feedback {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--accent-teal);
+  min-height: 1.2em;
+}
+
+/* ---------- Nudge section ---------- */
+.nudge-section {
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  padding: 1.5rem 5vw;
+}
+
+.nudge-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.nudge-text {
+  color: var(--text-muted);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+  #checkin-form {
+    grid-template-columns: 1fr;
+  }
+}

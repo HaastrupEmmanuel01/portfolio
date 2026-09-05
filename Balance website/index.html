@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Balance — a calmer way to see your screen time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <span class="logo">Balance</span>
+    <nav>
+      <a href="../index.html">Portfolio</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">◐</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Digital wellbeing, without the guilt trip</p>
+      <h1>A calmer way to see your screen time</h1>
+      <p class="hero-desc">
+        No background tracking, no data drain, no hard lockouts that get bypassed
+        anyway. Log a couple of minutes a day and Balance shows you the pattern —
+        so you can decide what to change, on your own terms.
+      </p>
+    </section>
+
+    <section class="tip-banner" id="tip-banner">
+      <span class="tip-label">Today's nudge</span>
+      <p id="tip-text">Loading a thought for today…</p>
+    </section>
+
+    <section class="dashboard">
+      <div class="panel weekly-panel">
+        <h2>This week</h2>
+        <div class="bar-chart" id="bar-chart"></div>
+        <p class="chart-caption" id="chart-caption"></p>
+      </div>
+
+      <div class="panel breakdown-panel">
+        <h2>Where the time goes</h2>
+        <div class="breakdown-list" id="breakdown-list"></div>
+      </div>
+    </section>
+
+    <section class="checkin">
+      <h2>Log today's screen time</h2>
+      <p class="checkin-sub">Takes 10 seconds. Be honest, not perfect.</p>
+      <form id="checkin-form">
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" required>
+            <option value="Social Media">Social Media</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Messaging">Messaging</option>
+            <option value="Productivity">Productivity</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="minutes">Minutes spent</label>
+          <input type="number" id="minutes" min="1" max="600" placeholder="e.g. 45" required />
+        </div>
+        <div class="field">
+          <label for="mood">How did it feel?</label>
+          <select id="mood" required>
+            <option value="great">Great — worth it</option>
+            <option value="okay">Okay — neutral</option>
+            <option value="draining">Draining — wish I hadn't</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">Add entry</button>
+      </form>
+      <p class="checkin-feedback" id="checkin-feedback"></p>
+    </section>
+
+    <section class="nudge-section">
+      <h2>How today compares</h2>
+      <p id="nudge-text" class="nudge-text">Log an entry to see how today compares with your week.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Balance — a project by Haastrup Emmanuel Adedayo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

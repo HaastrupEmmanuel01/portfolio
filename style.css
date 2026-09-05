@@ -1,0 +1,301 @@
+/* ---------- Theme tokens ---------- */
+:root {
+  --bg: #FAFAF7;
+  --text: #1B1B1F;
+  --text-muted: #5B5B63;
+  --border: #E4E2DB;
+  --accent-orange: #FF5A36;
+  --accent-teal: #12805C;
+  --surface: #F1F0EA;
+}
+
+html[data-theme="dark"] {
+  --bg: #14151A;
+  --text: #EDEDE8;
+  --text-muted: #A0A0A8;
+  --border: #2A2B32;
+  --accent-orange: #FF7A5C;
+  --accent-teal: #2EC28E;
+  --surface: #1D1E24;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, .logo, .eyebrow {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+a {
+  color: var(--text);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5vw;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.site-header nav a:hover {
+  color: var(--text);
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 6rem 5vw 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  max-width: 560px;
+}
+
+.eyebrow {
+  color: var(--accent-orange);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+}
+
+.hero-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 480px;
+}
+
+.hero-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-primary, .btn-ghost {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--accent-orange);
+  color: #FAFAF7;
+}
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.hero-mark {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mark-shape {
+  width: 180px;
+  height: 180px;
+  border-radius: 50% 50% 50% 0;
+  background: linear-gradient(135deg, var(--accent-orange), var(--accent-teal));
+}
+
+/* ---------- Work / Projects ---------- */
+.work {
+  padding: 2rem 5vw 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.work h2, .about h2, .contact h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.project {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.project:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.project-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-head h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.project-year {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0.75rem 0 1rem;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.tags li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--accent-teal);
+  font-size: 0.95rem;
+}
+
+.project-upcoming {
+  opacity: 0.7;
+}
+
+/* ---------- About ---------- */
+.about {
+  padding: 2rem 5vw 4rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about p {
+  color: var(--text-muted);
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  padding: 2rem 5vw 5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.contact-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-links a {
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent-orange);
+  padding-bottom: 2px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .hero {
+    flex-direction: column;
+    text-align: left;
+    padding-top: 4rem;
+  }
+  .hero-mark {
+    order: -1;
+  }
+  .mark-shape {
+    width: 120px;
+    height: 120px;
+  }
+  .site-header nav {
+    gap: 1rem;
+  }
+  .site-header nav a {
+    display: none;
+  }
+}
