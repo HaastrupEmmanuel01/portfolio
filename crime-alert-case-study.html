@@ -181,27 +181,6 @@
       only accessible to verified security personnel.
     </p>
 
-    <h2>Notification system</h2>
-    <p>
-      New reports trigger push notifications through Firebase Cloud Messaging
-      on two tracks: an immediate alert to registered security operatives, and
-      a geofenced alert to citizen devices located near the reported incident —
-      so nearby residents are warned without needing to have the app open.
-    </p>
-
-    <div class="screenshot-placeholder">🔔 Alert/notification screenshot — coming soon</div>
-
-    <h2>Verification approach</h2>
-    <p>
-      To reduce false or malicious reports, operatives can mark a report as
-      verified or dismissed from the dashboard. Verified reports are what
-      trigger the wider geofenced alert to nearby residents, while unverified
-      reports stay visible only to operatives until reviewed — balancing speed
-      with the reliability of what gets pushed out publicly.
-    </p>
-
-    <div class="screenshot-placeholder">🖥️ Security dashboard screenshot — coming soon</div>
-
     <h2>Challenges</h2>
     <ul>
       <li>Keeping the mobile app and web dashboard in sync in real time without excessive Firestore reads, which would increase cost at scale.</li>
