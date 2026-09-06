@@ -234,6 +234,30 @@ a {
   opacity: 0.7;
 }
 
+/* ---------- Skills ---------- */
+.skills {
+  padding: 2rem 5vw 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.skills-group h3 {
+  font-size: 1rem;
+  color: var(--accent-teal);
+  margin: 0 0 0.75rem;
+}
+
 /* ---------- About ---------- */
 .about {
   padding: 2rem 5vw 4rem;
@@ -243,6 +267,10 @@ a {
 
 .about p {
   color: var(--text-muted);
+}
+
+.about p + p {
+  margin-top: 1rem;
 }
 
 /* ---------- Contact ---------- */
@@ -259,14 +287,13 @@ a {
 
 .contact-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.contact-links a {
+.contact-links .btn-primary,
+.contact-links .btn-ghost {
   text-decoration: none;
-  font-weight: 600;
-  border-bottom: 2px solid var(--accent-orange);
-  padding-bottom: 2px;
 }
 
 /* ---------- Footer ---------- */

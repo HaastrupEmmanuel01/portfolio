@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crime Alert — Case Study | Haastrup Emmanuel Adedayo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<style>
+  .case-study { max-width: 780px; margin: 0 auto; padding: 3rem 5vw 5rem; }
+  .case-study .back-link { display: inline-block; margin-bottom: 2rem; color: var(--text-muted); text-decoration: none; font-weight: 600; }
+  .case-study .eyebrow { color: var(--accent-orange); font-weight: 600; margin-bottom: 0.5rem; }
+  .case-study h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 0 0 1rem; }
+  .case-study .subtitle { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2.5rem; }
+  .case-study h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .case-study h2:first-of-type { border-top: none; padding-top: 0; }
+  .case-study p { color: var(--text-muted); margin-bottom: 1rem; }
+  .case-study ul { color: var(--text-muted); padding-left: 1.2rem; }
+  .case-study li { margin-bottom: 0.5rem; }
+  .screenshot-placeholder {
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 1.5rem 0;
+    background: var(--surface);
+  }
+  .screenshot-row {
+    display: flex;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .screenshot-row figure {
+    margin: 0;
+    max-width: 260px;
+    flex: 1 1 220px;
+  }
+  .screenshot-row img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    display: block;
+  }
+  .screenshot-row figcaption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+  }
+  .screenshot-single {
+    max-width: 260px;
+    margin: 1.5rem auto;
+  }
+  .screenshot-single img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    display: block;
+  }
+  .screenshot-single figcaption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+  }
+  .case-study .project-links { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2.5rem; }
+  .case-study .project-links a { text-decoration: none; font-weight: 600; color: var(--accent-teal); }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <span class="logo">H.E.A</span>
+    <nav>
+      <a href="./index.html">Portfolio</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">◐</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="case-study">
+    <a href="./index.html#work" class="back-link">← Back to work</a>
+    <p class="eyebrow">Case Study · Final Year Project</p>
+    <h1>Crime Alert</h1>
+    <p class="subtitle">
+      A real-time crime reporting platform connecting citizens and security
+      operatives — built to close the gap between an incident happening and
+      the people who need to know about it.
+    </p>
+
+    <figure class="screenshot-single">
+      <img src="./assets/crime-alert/home-sos.jpg" alt="Crime Alert home screen with SOS button and recent alerts" />
+      <figcaption>Home screen — SOS button, live hotspots, and recent alerts near you</figcaption>
+    </figure>
+
+    <h2>The problem</h2>
+    <p>
+      In many Nigerian communities, reporting a crime in progress is slow and
+      disconnected. Citizens often don't know who to call, security operatives
+      don't know an incident is happening nearby until it's too late, and
+      residents in the immediate area have no way of knowing they should stay
+      alert or avoid a location. Crime Alert was built to shorten that chain —
+      from "something is happening" to "the right people already know."
+    </p>
+
+    <h2>Research</h2>
+    <p>
+      Before building, I looked at how existing reporting channels function in
+      practice — largely phone calls to police lines or informal community
+      WhatsApp groups. Both are slow, undocumented, and don't reach anyone
+      outside the immediate group. That gap — no structured, location-aware,
+      real-time channel — shaped the core requirement: reports needed to be
+      geotagged, timestamped, and pushed instantly to both operatives and
+      nearby residents, without relying on someone manually forwarding a message.
+    </p>
+
+    <h2>Architecture</h2>
+    <p>
+      Crime Alert is split into two connected applications sharing one Firebase
+      backend:
+    </p>
+    <ul>
+      <li><strong>Citizen mobile app</strong> (Flutter) — where residents submit reports with location, category, and description.</li>
+      <li><strong>Security dashboard</strong> (Flutter Web) — where operatives view incoming reports on a live feed, verify them, and coordinate response.</li>
+    </ul>
+    <p>
+      Using Flutter for both meant the majority of the UI logic and data models
+      could be shared between the mobile app and the web dashboard, rather than
+      maintaining two separate codebases in different languages.
+    </p>
+
+    <h2>Key features</h2>
+    <ul>
+      <li><strong>Structured reporting</strong> — crime type (robbery, assault, burglary, kidnapping, etc.) and an urgency level from Low to Critical, so operatives can triage at a glance.</li>
+      <li><strong>Live-only photo evidence</strong> — the camera captures a photo directly at the scene; gallery uploads are disabled to help confirm a report wasn't fabricated after the fact.</li>
+      <li><strong>GPS + manual location description</strong> — automatic coordinates as the primary source, with a landmark description field (e.g. "Near School of Computing gate, FUTA") as a fallback when GPS is unreliable.</li>
+      <li><strong>Anonymous reporting toggle</strong> — citizens can choose to hide their identity on a report.</li>
+      <li><strong>One-tap SOS</strong> — a hold-for-3-seconds SOS button on the home screen for active emergencies, separate from the standard report flow.</li>
+      <li><strong>Live severity-coded crime map</strong> — incidents plotted and color-coded (Critical, High, Medium, Low), with hotspot detection and running counts of nearby/critical/active SOS reports.</li>
+    </ul>
+
+    <div class="screenshot-row">
+      <figure>
+        <img src="./assets/crime-alert/report-crime-form.jpg" alt="Report a Crime form showing crime type and urgency level" />
+        <figcaption>Reporting flow — crime type and urgency level</figcaption>
+      </figure>
+      <figure>
+        <img src="./assets/crime-alert/report-location-photo.jpg" alt="Report a Crime screen showing photo evidence and GPS location capture" />
+        <figcaption>Photo evidence and GPS location capture</figcaption>
+      </figure>
+    </div>
+
+    <h2>How location reporting works</h2>
+    <p>
+      When a citizen submits a report, the app captures their device's current
+      GPS coordinates alongside the report details and writes it to Firestore.
+      Each report is stored with a timestamp, a category (e.g. theft, assault,
+      suspicious activity), and a status field used to track whether it's new,
+      under review, or resolved.
+    </p>
+
+    <figure class="screenshot-single">
+      <img src="./assets/crime-alert/crime-map.jpg" alt="Crime Map screen showing nearby incidents color-coded by severity" />
+      <figcaption>Live crime map — incidents color-coded by severity, with nearby/critical/active SOS counts</figcaption>
+    </figure>
+
+    <h2>Firebase implementation</h2>
+    <p>
+      Firestore acts as the real-time data layer: any new report written to the
+      database is instantly reflected on the security dashboard through a live
+      listener, with no need to refresh or poll. Firebase Authentication
+      separates citizen accounts from operative accounts, so the dashboard is
+      only accessible to verified security personnel.
+    </p>
+
+    <h2>Notification system</h2>
+    <p>
+      New reports trigger push notifications through Firebase Cloud Messaging
+      on two tracks: an immediate alert to registered security operatives, and
+      a geofenced alert to citizen devices located near the reported incident —
+      so nearby residents are warned without needing to have the app open.
+    </p>
+
+    <div class="screenshot-placeholder">🔔 Alert/notification screenshot — coming soon</div>
+
+    <h2>Verification approach</h2>
+    <p>
+      To reduce false or malicious reports, operatives can mark a report as
+      verified or dismissed from the dashboard. Verified reports are what
+      trigger the wider geofenced alert to nearby residents, while unverified
+      reports stay visible only to operatives until reviewed — balancing speed
+      with the reliability of what gets pushed out publicly.
+    </p>
+
+    <div class="screenshot-placeholder">🖥️ Security dashboard screenshot — coming soon</div>
+
+    <h2>Challenges</h2>
+    <ul>
+      <li>Keeping the mobile app and web dashboard in sync in real time without excessive Firestore reads, which would increase cost at scale.</li>
+      <li>Designing a geofencing radius that alerts genuinely nearby residents without over-notifying an entire district for a minor incident.</li>
+      <li>Structuring Firestore security rules so citizens can only read their own submitted reports, while operatives can read all reports — without exposing sensitive report data publicly.</li>
+    </ul>
+
+    <h2>Results</h2>
+    <p>
+      As a final year project, Crime Alert was built and demonstrated as a
+      fully working prototype covering the full reporting-to-alert flow: a
+      citizen can submit a report, an operative sees it appear live on the
+      dashboard, verifies it, and nearby residents receive a push notification
+      — all without manual intervention at any step.
+    </p>
+
+    <div class="project-links">
+      <a href="https://github.com/HaastrupEmmanuel01/crime-alert-app" target="_blank" rel="noopener">Mobile app repo →</a>
+      <a href="https://github.com/HaastrupEmmanuel01/crime-alert-dashboard" target="_blank" rel="noopener">Web dashboard repo →</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Haastrup Emmanuel Adedayo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
